@@ -95,7 +95,6 @@ SKILLS: {
     {
       title: "Hybrid Quantum-AI for Brain Tumor Analysis",
       type: "AI / Medical Imaging",
-      period: "February 2026 – Present",
 
       description:
         "Developing a hybrid AI framework for brain tumor analysis using MRI images from the BraTS2020 dataset. The workflow combines U-Net with ResNet for tumor segmentation, EfficientNet-B0 for feature extraction, and a PennyLane QCNN to classify glioma, meningioma, and pituitary tumors. It brings preprocessing, segmentation, classification, and result visualization into one end-to-end research project for AI-assisted medical image analysis.",
@@ -112,7 +111,6 @@ SKILLS: {
     {
       title: "Ship & Boat Detection in Coastal Areas",
       type: "Computer Vision",
-      period: "September 2025 – December 2025",
 
       description:
         "Built a real-time ship and boat detection system for ground-level coastal camera feeds using YOLOv8 and OpenCV. Created and annotated a custom dataset, then applied computer vision techniques to identify vessels in coastal environments, with potential use in AI-based coastal surveillance.",
