@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Education from "./components/Education";
@@ -24,6 +25,7 @@ function App() {
         <p>Designed and built by Thanzeed Ahamad</p>
         <a href="#top">Back to top ↑</a>
       </footer>
+      <SpeedInsights />
     </>
   );
 }
