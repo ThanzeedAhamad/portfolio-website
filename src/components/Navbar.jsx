@@ -1,8 +1,30 @@
-import { useState } from "react";
-import { Volume2, X } from "lucide-react";
+import { useRef, useState } from "react";
+import { Volume2, VolumeX } from "lucide-react";
 
 function Navbar() {
-  const [musicOpen, setMusicOpen] = useState(false);
+  const audioRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [playbackError, setPlaybackError] = useState("");
+
+  async function toggleMusic() {
+    const audio = audioRef.current;
+
+    if (!audio) return;
+
+    if (audio.paused) {
+      try {
+        await audio.play();
+        setIsPlaying(true);
+        setPlaybackError("");
+      } catch {
+        setIsPlaying(false);
+        setPlaybackError("Unable to play the song. Please try again.");
+      }
+    } else {
+      audio.pause();
+      setIsPlaying(false);
+    }
+  }
 
   return (
     <header className="navbar">
@@ -27,26 +49,25 @@ function Navbar() {
             <button
               type="button"
               className="nav-music-toggle"
-              aria-label={musicOpen ? "Close music player" : "Open music player"}
-              aria-expanded={musicOpen}
-              aria-controls="nav-music-player"
-              onClick={() => setMusicOpen((open) => !open)}
+              aria-label={isPlaying ? "Pause song" : "Play song"}
+              aria-pressed={isPlaying}
+              title={isPlaying ? "Pause song" : "Play song"}
+              onClick={toggleMusic}
             >
-              {musicOpen ? <X size={19} /> : <Volume2 size={19} />}
+              {isPlaying ? <Volume2 size={19} /> : <VolumeX size={19} />}
             </button>
 
-            {musicOpen && (
-              <div className="nav-music-popover" id="nav-music-player">
-                <div className="nav-music-info">
-                  <strong>Bring Me Back</strong>
-                  <span>Jherwen</span>
-                </div>
-                <audio controls preload="metadata" aria-label="Play Bring Me Back by Jherwen">
-                  <source src="/audio/bring-me-back.mp3" type="audio/mpeg" />
-                  Your browser does not support audio playback.
-                </audio>
-              </div>
-            )}
+            <audio
+              ref={audioRef}
+              preload="metadata"
+              src="/audio/bring-me-back.mp3"
+              onEnded={() => setIsPlaying(false)}
+              onPause={() => setIsPlaying(false)}
+              onPlay={() => setIsPlaying(true)}
+            />
+            <span className="visually-hidden" aria-live="polite">
+              {playbackError}
+            </span>
           </div>
 
           <a href="/resume.pdf" className="nav-resume">

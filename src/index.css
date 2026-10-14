@@ -134,6 +134,10 @@ a {
   position: relative;
 }
 
+.nav-music audio {
+  display: none;
+}
+
 .nav-music-toggle {
   width: 40px;
   height: 40px;
@@ -148,45 +152,21 @@ a {
 }
 
 .nav-music-toggle:hover,
-.nav-music-toggle[aria-expanded="true"] {
+.nav-music-toggle[aria-pressed="true"] {
   border-color: rgba(147, 135, 255, 0.5);
   background: rgba(147, 135, 255, 0.12);
 }
 
-.nav-music-popover {
+.visually-hidden {
   position: absolute;
-  top: calc(100% + 14px);
-  right: 0;
-  z-index: 110;
-  width: min(320px, calc(100vw - 32px));
-  padding: 17px;
-  border: 1px solid var(--border);
-  border-radius: 13px;
-  background: #111218;
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.4);
-}
-
-.nav-music-info {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  margin-bottom: 12px;
-}
-
-.nav-music-info strong {
-  font-family: "Manrope", sans-serif;
-  font-size: 14px;
-}
-
-.nav-music-info span {
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.nav-music-popover audio {
-  width: 100%;
-  height: 40px;
-  accent-color: var(--accent);
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .hero {
@@ -934,10 +914,6 @@ a {
   .nav-music-toggle {
     width: 38px;
     height: 38px;
-  }
-
-  .nav-music-popover {
-    top: calc(100% + 12px);
   }
 
   .hero {
