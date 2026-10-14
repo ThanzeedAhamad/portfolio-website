@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Volume2, VolumeX } from "lucide-react";
+import { Volume1, Volume2 } from "lucide-react";
 
 function Navbar() {
   const audioRef = useRef(null);
@@ -54,7 +54,7 @@ function Navbar() {
               title={isPlaying ? "Pause song" : "Play song"}
               onClick={toggleMusic}
             >
-              {isPlaying ? <Volume2 size={19} /> : <VolumeX size={19} />}
+              {isPlaying ? <Volume2 size={19} /> : <Volume1 size={19} />}
             </button>
 
             <audio
