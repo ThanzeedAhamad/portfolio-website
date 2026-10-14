@@ -728,6 +728,68 @@ a {
   padding-bottom: 85px;
 }
 
+.music-section {
+  padding: 0 24px 85px;
+}
+
+.music-card {
+  width: min(1040px, 100%);
+  min-height: 116px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0 auto;
+  padding: 20px 24px;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  background:
+    radial-gradient(ellipse at 0 50%, rgba(110, 94, 238, 0.12), transparent 55%),
+    var(--panel);
+}
+
+.music-icon {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(147, 135, 255, 0.2);
+  border-radius: 13px;
+  background: rgba(147, 135, 255, 0.1);
+  color: var(--accent);
+}
+
+.music-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.music-eyebrow {
+  color: var(--accent);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.music-details h2 {
+  margin-top: 5px;
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.music-artist {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.music-card audio {
+  width: min(370px, 45%);
+  height: 42px;
+  accent-color: var(--accent);
+}
+
 .contact-box {
   display: flex;
   align-items: center;
@@ -997,6 +1059,20 @@ a {
 
   .contact-box {
     display: block;
+  }
+
+  .music-section {
+    padding: 0 22px 65px;
+  }
+
+  .music-card {
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 18px;
+  }
+
+  .music-card audio {
+    width: 100%;
   }
 
   .contact-button {
