@@ -53,10 +53,6 @@ function Projects() {
                     {project.title}
                   </h3>
 
-                  <span className="project-period">
-                    {project.period}
-                  </span>
-
                   <p>
                     {project.description}
                   </p>
