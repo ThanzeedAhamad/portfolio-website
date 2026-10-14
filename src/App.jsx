@@ -3,6 +3,7 @@ import Contact from "./components/Contact";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Hero from "./components/Hero";
+import Highlights from "./components/Highlights";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
@@ -18,6 +19,7 @@ function App() {
         <Experience />
         <Projects />
         <Education />
+        <Highlights />
         <Contact />
       </main>
       <footer className="site-footer">

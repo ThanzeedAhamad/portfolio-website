@@ -126,9 +126,44 @@ SKILLS: {
     },
   ],
 
-  certifications: [],
+  certifications: [
+    {
+      name: "AWS Academy Cloud Foundations",
+      issuer: "AWS Academy",
+      year: "2025",
+    },
+    {
+      name: "Advanced Python",
+      issuer: "Ethnotech Academic Solutions",
+      year: "2024",
+    },
+  ],
 
-  achievements: [],
+  achievements: [
+    {
+      name: "2nd Place",
+      event: "Startup Sparks Innovation Event, AISE & ACODE",
+      year: "2025",
+    },
+    {
+      name: "Prototype Refinement Phase",
+      event: "Google Cloud Gen AI Exchange Hackathon",
+      year: "2025",
+    },
+  ],
+
+  leadership: [
+    {
+      role: "Event Coordinator",
+      group: "AIML Department",
+      description: [
+        "Coordinated and managed departmental technical and academic events.",
+        "Successfully conducted Code Clash, a technical event involving 50+ participating teams in 2025.",
+        "Supported event planning, coordination, execution, and departmental workshops.",
+        "Assisted with event and workshop photography and documentation.",
+      ],
+    },
+  ],
 };
 
 export default portfolioData;
